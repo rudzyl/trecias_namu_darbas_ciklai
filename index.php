@@ -78,3 +78,79 @@ for($i = 1; $i <= 10; $i++) {
 }
 //nr6
 echo '<h4>sesta uzduotis</h4>';
+echo '<h5>sestos uzduoties pirma dalis</h5>';
+
+$herbas = 0;
+$kartai = 0;
+while($herbas < 1) {
+    $random = rand(0, 1);
+    if($random == 0) {
+        $herbas++;
+        echo 'H' . '<br>';
+        $kartai++;
+    } else {
+        echo 'S' . '<br>';
+        $kartai++;
+    }
+}
+echo 'reikejo ' . $kartai . ' kol iskrito H';
+
+echo '<h5>sestos uzduoties antra dalis</h5>';
+
+$skaiciuojam = 0;
+$metimai = 0;
+while($skaiciuojam < 3) {
+    $random = rand(0, 1);
+    if($random == 0) {
+        $skaiciuojam++;
+        echo 'H' . '<br>';
+        $metimai++;
+    } else {
+        echo 'S' . '<br>';
+        $metimai++;
+    }
+}
+echo 'reikejo ' . $metimai . ' kol iskrito H tris kartus';
+
+echo '<h5>sestos uzduoties trecia dalis</h5>';
+
+$herbas = 0;
+$metimai = 0;
+while($herbas < 3) {
+    $moneta = rand(0, 1);
+    if($moneta) {
+        $herbas++;
+        echo 'iskrito H' . '<br>';
+        $metimai++;
+    } 
+    else {
+        $herbas = 0;
+        echo 'iskrito S' . '<br>';
+        $metimai++;
+    }
+}
+echo 'Reikejo ' . $metimai . ' kol iskrito H is eiles';
+
+//nr7
+echo '<h4>septinta uzduotis</h4>';
+
+$taskaiKazio = 0;
+$taskaiPetro = 0;
+$taskai = 0;
+
+while ($taskaiKazio < 222 && $taskaiPetro < 222) {
+    $kazys = rand(10, 20);
+    $petras = rand(5, 25);
+    if($kazys > $petras) {
+        echo 'partija laimejo Kazys ' . $kazys . '<br>'; 
+        $taskaiKazio += $kazys;
+    } else if ($kazys < $petras) {
+        echo 'partija laimejo Petras ' . $petras . '<br>';
+        $taskaiPetro += $petras;
+    }
+}
+if($taskaiKazio > $taskaiPetro) {
+    echo 'laimejo Kazys ' . $taskaiKazio;
+} else {
+    echo 'laimejo Petras ' . $taskaiPetro;
+}
