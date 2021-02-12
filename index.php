@@ -154,3 +154,84 @@ if($taskaiKazio > $taskaiPetro) {
 } else {
     echo 'laimejo Petras ' . $taskaiPetro;
 }
+
+//nr8
+echo '<h4>astunta uzduotis</h4>';
+
+for($i = 0; $i <= 10; $i++){
+    for($j = 10; $j >= $i; $j--) {
+        echo '&nbsp;&nbsp;&nbsp;';
+    }
+    for($x = 0; $x <= $i; $x++) {
+        echo "&nbsp;&nbsp;&nbsp;<span style='color: rgb(".rand(0,255). ",".rand(0,255). "," . rand(0,255).");'>*</span>&nbsp;";
+    }
+    for($y=10; $y >= $i; $y--) {
+        echo '&nbsp;&nbsp;&nbsp';
+    }
+    echo '<br>';  
+}
+for($i = 0; $i <= 10; $i++){
+    for($j = 0; $j <= $i; $j++) {
+        echo '&nbsp;&nbsp;&nbsp;';
+    }
+    for($x = 10; $x >= $i; $x--) {
+        echo "&nbsp;&nbsp;&nbsp;<span style='color: rgb(".rand(0,255). ",".rand(0,255). "," . rand(0,255).");'>*</span>&nbsp;";
+    }
+    for($y=0; $y <= $i; $y++) {
+        echo '&nbsp;&nbsp;&nbsp';
+    }
+    echo '<br>';  
+}
+
+//nr9
+echo '<h4>devinta uzduotis</h4>';
+
+$startTime = microtime(true);
+
+for($i = 0; $i < 1000000; $i++) {
+    $c = "10 bezdzioniu \n suvalge 20 bananu.";
+}
+$kiekUztruko = microtime(true) - $startTime;
+echo 'pirmas laikas' . $kiekUztruko . '<br>';
+
+$startTimeTwo = microtime(true);
+
+for($i = 0; $i < 1000000; $i++) {
+    $c = '10 bezdzioniu \n suvalge 20 bananu.' . '<br>';
+}
+$kiekUztrukoTwo = microtime(true) - $startTimeTwo;
+echo 'antras laikas' . (microtime(true) - $startTimeTwo) . '<br>';
+
+if($kiekUztruko > $kiekUztrukoTwo) {
+    echo 'Su dvigubom kabutem uztrunka ilgiau';
+} else if ($kiekUztruko < $kiekUztrukoTwo) {
+    echo 'Su viengubom kabutem uztrunka ilgiau' . '<br>';
+}
+
+//nr10
+echo '<h4>desimta uzduotis</h4>';
+
+$maziSmugiai = 0;
+for ($i = 0; $i < 5; $i++) {
+    $viniesIlgis = 0;
+    while ($viniesIlgis < 85) {
+        $viniesIlgis += rand(5, 20);
+        $maziSmugiai++;
+    }
+}
+echo 'Reikejo ' . $maziSmugiai . ' kol vinis buvo ikalta' . '<br>';
+
+$dideliSmugiai = 0;
+for ($i = 0; $i < 5; $i++) {
+    $viniesIlgis = 0;
+    while ($viniesIlgis < 85) {
+        $tikimybe = rand(0, 1);
+        if($tikimybe == 0) {
+            $dideliSmugiai += 0;
+        } else if ($tikimybe == 1) {
+            $viniesIlgis += rand(20, 30);
+            $dideliSmugiai++;
+        }
+    }
+}
+echo 'Reikejo ' . $dideliSmugiai . ' kol vinis buvo ikalta' . '<br>';
