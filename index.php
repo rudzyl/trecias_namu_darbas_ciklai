@@ -42,14 +42,14 @@ echo 'Skaiciu didesniu nei 150 yra ' . $kiekSk;
 echo '<h4>trecia uzduotis</h4>';
 
 $random = rand(3000, 4000);
-for ($i = 78; $i < $random; $i++) {
-    if($i < $random && $i > ($random - 78) && $i%77 == 0) {
-        echo $i;
-    }
-    else if($i % 77 == 0) {
-        echo $i . ', ';
+$array = [];
+for ($i = 1; $i <= $random; $i++) {
+    if ($i % 77 === 0) {
+        array_push($array, $i);
     }
 }
+$stringArray = implode(", ", $array);
+echo $stringArray;
 
 //nr4
 echo '<h4>ketvirta uzduotis</h4>';
